@@ -234,6 +234,29 @@ footer {
     line-height: 1.8;
 }
 
+.footer-reiki {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    gap: 25px;             
+}
+
+.footer-section_reiki h3 {
+    font-size: 1.1rem;
+    color: rgb(10, 10, 173);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.services-list {
+    list-style: none;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+}    
+
 /* Estilos exclusivos para Coach */
 
 .tarjeta-coach {
@@ -260,4 +283,26 @@ footer {
     margin-top: 20px;
     text-align: justify;
     line-height: 1.8;
+}
+
+.footer-coach {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    gap: 25px;             
+}
+
+.footer-section_coach h3 {
+    font-size: 1.1rem;
+    color: rgb(10, 10, 173);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.services-list_coach{
+    list-style: none;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
 }
