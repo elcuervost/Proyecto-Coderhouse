@@ -26,6 +26,12 @@ header div img {
     display: block; 
     margin: 0 auto;
 }
+header nav div ul li a{
+    color:rgb(10, 10, 173) !important;
+}
+.navbar-toggler {
+    border-color: rgb(10, 10, 173) !important; 
+}
 
 h1 {
     text-align: center;
@@ -46,6 +52,7 @@ div span {
 nav{
     background-color: #C29FFA;
 }
+
 
 /* estilos para el main esxlusivo del INDEX*/
 
