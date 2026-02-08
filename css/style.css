@@ -18,25 +18,30 @@ body {
 header {
     padding: 20px;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     gap: 10px;
 }
 
 header div img {
-    display: block; 
+    display: block;
     margin: 0 auto;
 }
 header nav div ul li a{
     color:rgb(10, 10, 173) !important;
 }
+
+.logo-principal{
+    display: none;
+}
+
 .navbar-toggler {
-    border-color: rgb(10, 10, 173) !important; 
+    border-color: rgb(10, 10, 173) !important;
 }
 
 h1 {
     text-align: center;
     color: rgb(10, 10, 173);
-    font-size: 2.5rem; 
+    font-size: 2.5rem;
     font-weight: bolder;
     line-height: 1;
 }
@@ -58,7 +63,7 @@ nav{
 
 main {
     padding: 20px;
-    max-width: 600px; 
+    max-width: 600px;
     margin: 0 auto;
     background-color: #c29ffa;
 }
@@ -72,7 +77,7 @@ section h2, section h3 {
 }
 
 summary {
-    list-style: none; 
+    list-style: none;
     color: #6f42c1;
     cursor: pointer;
     font-weight: bold;
@@ -82,7 +87,11 @@ summary {
 }
 
 summary::after {
-    content: ' +'; 
+    content: ' +';
+}
+
+details summary{
+    cursor: pointer;
 }
 
 details[open] summary::after {
@@ -107,32 +116,33 @@ section h2::after, section h3::after {
 
 section p {
     font-size: 1.05rem;
-    line-height: 1.7; 
+    line-height: 1.7;
     color: #444;
     margin-bottom: 30px;
-    text-align: justify; 
+    text-align: justify;
 }
+/* contenedores de la pagina principal */
 
-
-section:first-of-type {
-    background: #e7e2f8; 
+.container-principal section:first-of-type {
+    background: #e7e2f8;
     padding: 20px;
     border-radius: 15px;
     border-left: 5px solid #6610f2;
     margin-bottom: 40px;
 }
 
-section:nth-of-type(2) {
+.container-principal section:nth-of-type(2) {
     display: grid;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
     margin-bottom: 40px;
 }
 
+/* imagenes de la pagina principal */
 
 section img {
     width: 100%;
-    height: 200px; 
+    height: 200px;
     object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -152,19 +162,23 @@ section img:nth-of-type(3) {
 }
 
 section img:nth-of-type(4) {
-    object-position: 50% 50% ;
+    object-position: top;
 }
 
 section img:nth-of-type(5) {
-    object-position: 30% 70% ;
+    object-position: 70% 30% ;
+}
+
+section img:nth-of-type(8) {
+    display: none;
 }
 
 section img:last-of-type {
-    object-position: bottom ; 
+    object-position: bottom ;
 }
 
 section img:hover {
-    transform: scale(1.03); 
+    transform: scale(1.03);
 }
 
 
@@ -176,7 +190,7 @@ section h3 {
 /* estilos GLOBAL del footer */
 
 footer {
-    background-color: #C29FFA; 
+    background-color: #C29FFA;
     color: rgb(10, 10, 173);
     padding: 30px 20px;
     text-align: center;
@@ -186,19 +200,20 @@ footer {
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 30px; 
+    gap: 30px;
     margin: 15px 0;
 }
 
 .social-icons a {
     color: rgb(100, 100, 204);
-    font-size: 1.8rem; 
+    font-size: 1.8rem;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
 /* Efecto al tocar o pasar el mouse */
+
 .social-icons a:hover {
-    color: #6610f2; 
+    color: #6610f2;
     transform: scale(1.1);
 }
 
@@ -208,49 +223,56 @@ footer {
     margin-top: 10px;
 }
 
+.whatsapp-link-footer{
+    display: none;
+}
+
+/* boton de whatsapp flotante */
+
 .whatsapp-btn {
-    position: fixed;   
-    width: 40px;        
+    position: fixed;
+    width: 40px;
     height: 40px;
-    bottom: 20px;      
-    right: 20px;       
+    bottom: 20px;
+    right: 20px;
     background-color: #25d366;
     color: #FFF;
-    border-radius: 50px; 
+    border-radius: 50px;
     text-align: center;
-    font-size: 25px;    
+    font-size: 25px;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-    display: flex;    
+    display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;    
+    z-index: 1000;
     text-decoration: none;
     transition: transform 0.3s ease;
 }
 
 .whatsapp-btn:active {
     transform: scale(1.1);
-    background-color: #128c7e; 
+    background-color: #128c7e;
 }
 
-/* Estilos exclusivos para REIKI */
+/* Estilos exclusivos para pagina de REIKI */
 
 .tarjeta-reiki {
-    background: #e7e2f8; 
+    background: #e7e2f8;
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 40px;
 }
 
+/* imagenes de la pagina de reiki */
 
 .imagen-reiki {
-    width: 100%;           
-    height: auto;          
-    max-height: 600px;     
-    object-fit: cover;     
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
     border-radius: 15px;
     margin: 25px 0;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     display: block;
 }
 
@@ -263,9 +285,9 @@ footer {
 
 .footer-reiki {
     display: flex;
-    flex-direction: column; 
-    align-items: center;    
-    gap: 25px;             
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
 }
 
 .footer-section_reiki h3 {
@@ -281,26 +303,27 @@ footer {
     list-style: none;
     display: flex;
     align-items: center;
-}    
+}
 
-/* Estilos exclusivos para Coach */
+/* Estilos exclusivos para pagina de Coach ontologico */
 
 .tarjeta-coach {
-    background: #e7e2f8; 
+    background: #e7e2f8;
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 40px;
 }
 
+/* imagenes de la pagina de coach ontologico */
 
 .imagen-coach {
-    width: 100%;           
-    height: auto;          
-    max-height: 600px;     
-    object-fit: cover;     
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
     border-radius: 15px;
     margin: 25px 0;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     display: block;
 }
 
@@ -313,9 +336,9 @@ footer {
 
 .footer-coach {
     display: flex;
-    flex-direction: column; 
-    align-items: center;    
-    gap: 25px;             
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
 }
 
 .footer-section_coach h3 {
@@ -332,24 +355,25 @@ footer {
     align-items: center;
 }
 
-/* Estilos exclusivos para teparia - sonora */
+/* Estilos exclusivos para la pagina de terapia con sonido */
 
 .tarjeta-terapia-sonora {
-    background: #e7e2f8; 
+    background: #e7e2f8;
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 40px;
 }
 
+/* imagenes de la pagina de terapia con sonido */
 
 .imagen-terapia-sonora {
-    width: 100%;           
-    height: auto;          
-    max-height: 600px;     
-    object-fit: cover;     
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
     border-radius: 15px;
     margin: 25px 0;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     display: block;
 }
 
@@ -362,9 +386,9 @@ footer {
 
 .footer-terapia-sonora {
     display: flex;
-    flex-direction: column; 
-    align-items: center;    
-    gap: 25px;             
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
 }
 
 .footer-section-terapia-sonora h3 {
@@ -381,30 +405,56 @@ footer {
     align-items: center;
 }
 
-/* Estilos exclusivos para meditacion */
+/* Estilos exclusivos para la pagina de meditacion */
+
+.container-meditacion section:first-of-type, section:nth-of-type(3){
+    background: #e7e2f8;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 5px solid #6610f2;
+    margin-bottom: 40px;
+}
+
+.container-meditacion section p span{
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #6610f2;
+    margin-bottom: 30px;
+    text-align: justify;
+
+}
 
 .tarjeta-meditacion {
-    background: #e7e2f8; 
+    background: #e7e2f8;
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 40px;
 }
 
+/* imagenes de la pagina de meditacion */
 
 .imagen-meditacion {
-    width: 100%;           
-    height: auto;          
-    max-height: 600px;     
-    object-fit: cover;     
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
     border-radius: 15px;
     margin: 25px 0;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     display: block;
 }
-.imagen-meditacion:last-of-type{
-    object-position: 30% 70%;
+
+.container-meditacion .imagen-meditacion-sub-1{
+    display: none;
 }
 
+.container-meditacion .imagen-meditacion:nth-of-type(2){
+    display: none;
+}
+
+.container-meditacion .imagen-meditacion:nth-of-type(3){
+    display: none;
+}
 
 .tarjeta-meditacion p {
     margin-top: 20px;
@@ -414,9 +464,9 @@ footer {
 
 .footer-meditacion {
     display: flex;
-    flex-direction: column; 
-    align-items: center;    
-    gap: 25px;             
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
 }
 
 .footer-section-meditacion h3 {
@@ -432,3 +482,266 @@ footer {
     display: flex;
     align-items: center;
 }
+
+/* RESPONSIVE PARA TABLETS (MIN - WIDTH 768px) */
+
+@media (min-width: 768px) {
+
+   /* invertir colores */
+
+    body {
+        background-color: #C29FFA;
+    }
+
+    nav{
+        background-color: #eec1e3;
+    }
+
+    main {
+        background-color: #eec1e3;
+    }
+    footer {
+        background-color: #eec1e3;
+    }
+
+    /* fin invertir colores */
+
+    /* header global */
+
+    header div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 20px;
+        position: relative;
+    }
+
+    h1 {
+        order: 1;
+        margin: 0 auto;
+        text-align: center;
+        flex-grow: 1;
+    }
+
+    .logo-principal {
+        display: block !important;
+        order: 2;
+        width: 80px;
+        height: auto;
+        position: absolute;
+        right: 20px;
+    }
+
+    .navbar-brand {
+            display: none;
+    }
+    /* fin header global */
+
+    /* cambios de la pagina principal */
+
+    .container-principal {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 40px;
+        padding: 20px;
+    }
+
+    .container-principal section:first-child {
+        order: 2;
+        flex: 1.5;
+    }
+
+    .container-principal section:last-child {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+        order: 1;
+        flex: 1;
+    }
+
+
+    .container-principal section img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .container-principal section img:nth-of-type(8){
+        display: block;
+        object-position: top;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        align-items: center;
+        padding: 10px 10px;
+    }
+
+    .footer-info-centro {
+        grid-column: 2;
+        justify-self: center;
+        text-align: center;
+    }
+
+    .social-icons {
+        grid-column: 3;
+        align-self: end;
+        justify-self: start;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        transform: translateY(45px);
+    }
+
+    .instagram-link, .whatsapp-link-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: inherit;
+    }
+
+
+    .whatsapp-link-footer {
+        margin-right: 1.5em;
+    }
+
+    .social-icons i {
+        font-size: 1.5rem;
+        width: 30px;
+        text-align: center;
+    }
+
+    .whatsapp-btn {
+        display: none;
+    }
+
+/* cambios de la pagina meditacion */
+
+    .container-meditacion {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr; 
+        gap: 30px;
+        align-items: start;
+        padding: 40px;
+    }
+
+    .container-meditacion .imagen-meditacion-sub-1{
+        display: block;
+    }
+
+    .container-meditacion .imagen-meditacion:nth-of-type(2){
+        display: block;
+    }
+
+    .container-meditacion .imagen-meditacion:nth-of-type(2){
+        object-position: 60%;
+    }
+
+    .container-meditacion .imagen-meditacion:nth-of-type(3){
+        display: block;
+    }
+    
+    .container-meditacion .imagen-meditacion:nth-of-type(3){
+        object-position: 60%;
+    }
+
+    .container-meditacion section:nth-child(1) {
+        grid-column: 1 / span 3;
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    .container-meditacion section:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    /* 3. El Texto: Se mueve a la columna 2 (derecha) */
+    .container-meditacion section:nth-child(3) {
+        grid-column: 2 / span 2;
+        grid-row: 2 / span 3; 
+    }
+
+    /* 4. El resto de las fotos: Se quedan en la columna 1 (izquierda) */
+    .container-meditacion section:nth-child(4) {
+        grid-column: 1;
+        grid-row: 3; /* Debajo de la primera foto */
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+
+
+    /* Ajuste para que todas las imágenes se vean prolijas */
+    .container-meditacion img {
+        width: 100%;
+        height: 250px;
+        display: block;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr; 
+        align-items: start;
+        padding: 20px 40px;
+    }
+
+    /* BLOQUE IZQUIERDA: Servicios */
+    .footer-meditacion {
+        grid-column: 1;
+        justify-self: start;
+    }
+
+    /* BLOQUE CENTRO: Copyright y Slogan */
+    .footer-content {
+        grid-column: 2;
+        justify-self: center;
+        text-align: center;
+        display: flex;
+        flex-direction: column; /* Apila copy y slogan */
+        gap: 5px;
+        transform: translateY(50px); 
+    }
+
+    /* BLOQUE DERECHA: Redes */
+    .social-icons {
+        grid-column: 3;
+        justify-items: end; /* Pegado a la derecha */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        /* Bajamos el bloque para nivelar visualmente */
+        transform: translateY(10px); 
+    }
+
+    /* Estilo de los links de redes */
+    .instagram-link, 
+    .whatsapp-link-footer {
+        display: flex;
+        flex-direction: column; /* Texto izquierda, Icono derecha */
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* Quitamos el margin-right que te lo desalineaba */
+    .whatsapp-link-footer {
+        margin-right: 1.5em;
+    }
+
+    .social-icons i {
+        font-size: 1.5rem;
+        width: 30px;
+        text-align: center;
+    }
+}
+
