@@ -139,6 +139,26 @@ section img {
     transition: transform 0.3s ease;
 }
 
+section img:first-of-type {
+    object-position: 30% 70%;
+}
+
+section img:nth-of-type(2) {
+    object-position: bottom ;
+}
+
+section img:nth-of-type(3) {
+    object-position: 100% ;
+}
+
+section img:nth-of-type(4) {
+    object-position: 50% 50% ;
+}
+
+section img:nth-of-type(5) {
+    object-position: 30% 70% ;
+}
+
 section img:last-of-type {
     object-position: bottom ; 
 }
@@ -257,9 +277,8 @@ footer {
 }
 
 
-.services-list {
+.services-list-reiki {
     list-style: none;
-    padding: 0 25px;
     display: flex;
     align-items: center;
 }    
@@ -309,7 +328,107 @@ footer {
 
 .services-list_coach{
     list-style: none;
-    padding: 0 30px;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos exclusivos para teparia - sonora */
+
+.tarjeta-terapia-sonora {
+    background: #e7e2f8; 
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+}
+
+
+.imagen-terapia-sonora {
+    width: 100%;           
+    height: auto;          
+    max-height: 600px;     
+    object-fit: cover;     
+    border-radius: 15px;
+    margin: 25px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+    display: block;
+}
+
+
+.tarjeta-terapia-sonora p {
+    margin-top: 20px;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.footer-terapia-sonora {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    gap: 25px;             
+}
+
+.footer-section-terapia-sonora h3 {
+    font-size: 1.1rem;
+    color: rgb(10, 10, 173);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.services-list-terapia-sonora{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos exclusivos para meditacion */
+
+.tarjeta-meditacion {
+    background: #e7e2f8; 
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+}
+
+
+.imagen-meditacion {
+    width: 100%;           
+    height: auto;          
+    max-height: 600px;     
+    object-fit: cover;     
+    border-radius: 15px;
+    margin: 25px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+    display: block;
+}
+.imagen-meditacion:last-of-type{
+    object-position: 30% 70%;
+}
+
+
+.tarjeta-meditacion p {
+    margin-top: 20px;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.footer-meditacion {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    gap: 25px;             
+}
+
+.footer-section-meditacion h3 {
+    font-size: 1.1rem;
+    color: rgb(10, 10, 173);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.services-list-meditacion{
+    list-style: none;
     display: flex;
     align-items: center;
 }
