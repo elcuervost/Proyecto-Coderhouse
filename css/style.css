@@ -123,12 +123,13 @@ section p {
 }
 /* contenedores de la pagina principal */
 
-.container-principal .texto-principal {
+.container-principal section:first-of-type {
     background: #e7e2f8;
-    padding: 20px;
+    padding: 25px; 
     border-radius: 15px;
     border-left: 5px solid #6610f2;
-    margin-bottom: 40px;
+    margin-bottom: 20px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
 }
 
 .container-principal section:nth-of-type(2) {
@@ -138,6 +139,7 @@ section p {
     margin-bottom: 40px;
 }
 
+    
 /* imagenes de la pagina principal */
 
 section img {
@@ -256,7 +258,15 @@ footer {
 
 /* Estilos exclusivos para pagina de REIKI */
 
-.container-reiki section:first-of-type, section:nth-of-type(3){
+.container-reiki section:first-of-type{
+    background: #e7e2f8;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 5px solid #6610f2;
+    margin-bottom: 40px;
+}
+
+.container-reiki section:nth-of-type(3) { 
     background: #e7e2f8;
     padding: 20px;
     border-radius: 15px;
@@ -284,9 +294,7 @@ footer {
 
 .imagen-reiki {
     width: 100%;
-    height: auto;
-    max-height: 900px;
-    object-fit: cover;
+    height: auto;    
     border-radius: 15px;
     margin: 25px 0;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -294,9 +302,7 @@ footer {
 }
 .imagen-reiki-1 {
     width: 100%;
-    height: auto;
-    max-height: 600px;
-    object-fit: cover;
+    height: auto;    
     border-radius: 15px;
     margin: 25px 0;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -348,7 +354,15 @@ footer {
 
 /* Estilos exclusivos para pagina de Coach ontologico */
 
-.container-coach section:first-of-type, section:nth-of-type(3){
+.container-coach section:first-of-type{
+    background: #e7e2f8;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 5px solid #6610f2;
+    margin-bottom: 40px;
+}
+
+.container-coach section:nth-of-type(3) { 
     background: #e7e2f8;
     padding: 20px;
     border-radius: 15px;
@@ -376,9 +390,7 @@ footer {
 
 .imagen-coach {
     width: 100%;
-    height: auto;
-    max-height: 600px;
-    object-fit: cover;
+    height: auto;   
     border-radius: 15px;
     margin: 25px 0;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -387,9 +399,7 @@ footer {
 
 .imagen-coach-1 {
     width: 100%;
-    height: auto;
-    max-height: 600px;
-    object-fit: cover;
+    height: auto;    
     border-radius: 15px;
     margin: 25px 0;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -398,9 +408,7 @@ footer {
 
 .imagen-coach-sub-1 {
     width: 100%;
-    height: auto;
-    max-height: 600px;
-    object-fit: cover;
+    height: auto;    
     border-radius: 15px;
     margin: 25px 0;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -456,7 +464,15 @@ footer {
 
 /* Estilos exclusivos para la pagina de terapia con sonido */
 
-.container-terapia-sonora section:first-of-type, section:nth-of-type(3){
+.container-terapia-sonora section:first-of-type{
+    background: #e7e2f8;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 5px solid #6610f2;
+    margin-bottom: 40px;
+}
+
+.container-terapia-sonora section:nth-of-type(3) { 
     background: #e7e2f8;
     padding: 20px;
     border-radius: 15px;
@@ -484,9 +500,7 @@ footer {
 
 .imagen-terapia-sonora {
     width: 100%;
-    height: auto;
-    max-height: 900px;
-    object-fit: cover;
+    height: auto;    
     border-radius: 15px;
     margin: 25px 0;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -494,9 +508,7 @@ footer {
 }
 .imagen-terapia-sonora-1 {
     width: 100%;
-    height: auto;
-    max-height: 600px;
-    object-fit: cover;
+    height: auto;   
     border-radius: 15px;
     margin: 25px 0;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -552,7 +564,15 @@ footer {
 
 /* Estilos exclusivos para la pagina de meditacion */
 
-.container-meditacion section:first-of-type, section:nth-of-type(3){
+.container-meditacion section:first-of-type{
+    background: #e7e2f8;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 5px solid #6610f2;
+    margin-bottom: 40px;
+}
+
+.container-meditacion section:nth-of-type(3) { 
     background: #e7e2f8;
     padding: 20px;
     border-radius: 15px;
@@ -580,9 +600,7 @@ footer {
 
 .imagen-meditacion {
     width: 100%;
-    height: auto;
-    max-height: 600px;
-    object-fit: cover;
+    height: auto;   
     border-radius: 15px;
     margin: 25px 0;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -980,18 +998,10 @@ footer {
         display: block;
     }
 
-    .container-reiki .imagen-reiki:nth-of-type(2){
-        object-position: 
-    }
-
     .container-reiki .imagen-reiki:nth-of-type(3){
         display: block;
     }
     
-    .container-reiki .imagen-reiki:nth-of-type(3){
-        object-position: ;
-    }
-
     .container-reiki .imagen-reiki:last-child{
         display: block;
     }
