@@ -1,3 +1,14 @@
+/* variables de colores de la pagina */
+
+:root {
+    --color-fondo: #eec1e3;
+    --color-secundario: #C29FFA;
+    --color-enlaces: rgb(10, 10, 173);
+    --color-subrayado: rgb(100, 100, 204);
+    --color-texto: #444;
+    --fuente-principal: sans-serif;
+}
+
 /* Reseteo básico */
 * {
     margin: 0;
@@ -8,10 +19,10 @@
 /* estilos del GLOBAL del body */
 
 body {
-    font-family: sans-serif;
+    font-family: var(--fuente-principal);
     line-height: 1.6;
-    background-color: #eec1e3;
-}
+    background-color: var(--color-fondo);
+    }
 
 /* estilos GLOBAL del header */
 
@@ -19,38 +30,21 @@ header {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-
-header div img {
-    display: block;
-    margin: 0 auto;
-}
-header nav div ul li a{
-    color:rgb(10, 10, 173) !important;
-}
-
-.logo-principal{
-    display: none;
-}
-
-.navbar-toggler {
-    border-color: rgb(10, 10, 173) !important;
+    gap: 15px;
 }
 
 h1 {
     text-align: center;
-    color: rgb(10, 10, 173);
+    color:var(--color-enlaces);
     font-family: 'mea culpa', cursive;
     font-size: 3rem;
     font-weight: bolder;
     line-height: 1;
 }  
-    
 
-div span {
+div h1 span {
     display: block;
-    color: rgb(100, 100, 204);
+    color: var(--color-subrayado);
     font-size: 0.5em;
     letter-spacing: 2px;
     margin-top: 10px;
@@ -58,29 +52,79 @@ div span {
     font-size: 0.3em;
 }
 
-nav{
-    background-color: #C29FFA;
+.logo-principal{
+    display: none;
 }
 
+.navbar{
+    background-color: var(--color-secundario);
+    border-radius: 8px;
+}
+
+.navbar .collapse .nav-link {
+    color:var(--color-enlaces);      
+}
+
+.navbar .collapse .nav-link:hover {
+    color:#6610f2;
+    transform: translateY(-2px);
+}
+
+.navbar .navbar-toggler {
+    border: 2px solid var(--color-enlaces);
+    padding: 4px 8px;
+    outline: none;
+    box-shadow: none !important;    
+}
+
+.navbar-toggler-icon{
+    filter: sepia(100%) hue-rotate(190deg) saturate(500%);
+}
 
 /* estilos para el main esxlusivo del INDEX*/
 
-main {
+.container-principal{
+    background-color: var(--color-secundario);
+    width: 100%;
+}
+
+main, .section-list {
+    background-color: transparent;
     padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #c29ffa;
+    margin: 0 auto; 
 }
 
+.container-services {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px; 
+    margin: 0 auto;   
+    padding: 10px;   
+}
 
-section h2, section h3 {
-    color: rgb(10, 10, 173);
-    margin-bottom: 15px;
+.tarjeta{
+    order: 1;
+}
+
+.imagenes-principal{
+    order: 2;
+}
+
+/* estilos para subtitulos */
+
+.container-services h2, .container-services h3 {
+    color: var(--color-enlaces);
+    margin-bottom: 20px;
+    font-family: var(--fuente-principal);
     position: relative;
-    display: inline-block;
+    font-weight: bold;
+    display: block;
 }
 
-summary {
+/* estilo para cortar parrafo */
+
+.container-services summary {
     list-style: none;
     color: #6f42c1;
     cursor: pointer;
@@ -90,44 +134,49 @@ summary {
     outline: none;
 }
 
-summary::after {
-    content: ' +';
+/* boton de ver mas */
+
+.container-services summary::after {
+    content: '+';
 }
 
-details summary{
-    cursor: pointer;
+/* una vez abierto ver menos */
+
+.container-services [open] summary::after {
+    content: '-';
 }
 
-details[open] summary::after {
-    content: ' -';
+/*  espacio una vez abierto el resto del parrafo */
+
+.container-services [open] summary {
+    margin-bottom: 25px;
 }
 
-details[open] summary {
-    margin-bottom: 10px;
-}
+/* estilo de subrayado personal a los subtitulos */
 
-
-section h2::after, section h3::after {
+.container-services h2::after, .container-services h3::after {
     content: '';
     display: block;
     width: 50px;
     height: 3px;
-    background: rgb(100, 100, 204);
+    background: var(--color-subrayado);
     margin-top: 5px;
     border-radius: 2px;
 }
 
+/* estilo de parrafos */
 
-section p {
+.container-services p {
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #444;
+    color: var(--color-texto);
     margin-bottom: 30px;
     text-align: justify;
 }
 /* contenedores de la pagina principal */
 
-.container-principal section:first-of-type {
+
+.tarjeta {
     background: #e7e2f8;
     padding: 25px; 
     border-radius: 15px;
@@ -136,17 +185,17 @@ section p {
     box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
 }
 
-.container-principal section:nth-of-type(2) {
+.container-services .imagenes-principal {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
     margin-bottom: 40px;
 }
 
-    
 /* imagenes de la pagina principal */
 
-section img {
+.container-services .imagenes-principal img, 
+.imagenes-coach img {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -155,63 +204,40 @@ section img {
     transition: transform 0.3s ease;
 }
 
-section img:first-of-type {
-    object-position: 30% 70%;
-}
-
-section img:nth-of-type(2) {
-    object-position: bottom ;
-}
-
-section img:nth-of-type(3) {
-    object-position: 100% ;
-}
-
-section img:nth-of-type(4) {
-    object-position: top;
-}
-
-section img:nth-of-type(5) {
-    object-position: 70% 30% ;
-}
-
-section img:nth-of-type(8) {
+.no-mobile{
     display: none;
 }
 
-section img:last-of-type {
-    object-position: bottom ;
+aside img:nth-of-type(3) {
+    object-position: 90%;
 }
 
-section img:hover {
+aside img:hover {
     transform: scale(1.03);
 }
 
 
-section h3 {
-    font-size: 1.5rem;
-    margin-top: 20px;
-}
-
 /* estilos GLOBAL del footer */
 
 footer {
-    background-color: #C29FFA;
-    color: rgb(10, 10, 173);
-    padding: 30px 20px;
+    background-color: var(--color-secundario);
+    color: var(--color-enlaces);
+    padding: 20px 20px;
     text-align: center;
     margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
 }
 
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin: 15px 0;
+.footer-final .footer-info-centro {
+    font-size: 1rem;
+    opacity: 0.7;
+    margin-top: 10px;
 }
 
 .social-icons a {
-    color: rgb(100, 100, 204);
     font-size: 1.8rem;
     transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -223,13 +249,7 @@ footer {
     transform: scale(1.1);
 }
 
-.slogan-footer {
-    font-size: 1rem;
-    opacity: 0.7;
-    margin-top: 10px;
-}
-
-.whatsapp-link-footer{
+.social-icons .whatsapp-link-footer{
     display: none;
 }
 
@@ -260,840 +280,67 @@ footer {
     background-color: #128c7e;
 }
 
-/* Estilos exclusivos para pagina de REIKI */
+/* estructura de estilos para paginas auxiliares */
 
-.container-reiki section:first-of-type{
-    background: #e7e2f8;
-    padding: 20px;
-    border-radius: 15px;
-    border-left: 5px solid #6610f2;
-    margin-bottom: 40px;
+.imagenes-coach, .imagenes-meditacion,
+.imagenes-sonoro, .imagenes-reiki{
+    display: contents;
 }
 
-.container-reiki section:nth-of-type(3) { 
-    background: #e7e2f8;
-    padding: 20px;
+.imagenes-coach .imagen-inicio,
+.imagenes-meditacion .imagen-inicio,
+.imagenes-sonoro .imagen-inicio,
+.imagenes-reiki .imagen-inicio {
+    order: 1;
+    width: 100%;
+    height: auto;    
     border-radius: 15px;
-    border-left: 5px solid #6610f2;
-    margin-bottom: 40px;
+    margin: 10px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.container-reiki section p span{
+
+.tarteta.texto-articulo{
+    order: 2;
+}
+
+.imagenes-coach .imagen-final,
+.imagenes-meditacion .imagen-final,
+.imagenes-sonoro .imagen-final,
+.imagenes-reiki .imagen-final{
+    order: 3;
+    width: 100%;
+    height: auto;    
+    border-radius: 15px;
+    margin: 10px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.texto-articulo p span {
     font-size: 1.1rem;
     line-height: 1.7;
     color: #6610f2;
-    margin-bottom: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     text-align: justify;
-
-}
-
-.tarjeta-reiki {
-    background: #e7e2f8;
-    padding: 30px;
-    border-radius: 15px;
-    margin-bottom: 40px;
-}
-
-/* imagenes de la pagina de reiki */
-
-.imagen-reiki {
-    width: 100%;
-    height: auto;    
-    border-radius: 15px;
-    margin: 25px 0;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    display: block;
-}
-.imagen-reiki-1 {
-    width: 100%;
-    height: auto;    
-    border-radius: 15px;
-    margin: 25px 0;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     display: block;
 }
 
-.container-reiki .imagen-reiki-sub-1{
-    display: none;
-}
-
-.container-reiki .imagen-reiki:nth-of-type(2){
-    display: none;
-}
-
-.container-reiki .imagen-reiki:nth-of-type(3){
-    display: none;
-}
-
-.container-reiki .imagen-reiki:last-child{
-    display: none;
-}
-
-.tarjeta-reiki p {
-    margin-top: 20px;
-    text-align: justify;
-    line-height: 1.8;
-}
-
-.footer-reiki {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-}
-
-.footer-section-reiki h3 {
-    font-size: 1.1rem;
-    color: rgb(10, 10, 173);
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.services-list-reiki{
+.footer-services-list{
     list-style: none;
-    display: flex;
-    align-items: center;
+    padding: 0;
 }
 
-/* Estilos exclusivos para pagina de Coach ontologico */
-
-.container-coach section:first-of-type{
-    background: #e7e2f8;
-    padding: 20px;
-    border-radius: 15px;
-    border-left: 5px solid #6610f2;
-    margin-bottom: 40px;
+.footer-services-list li{
+    margin: 10px 0;
 }
 
-.container-coach section:nth-of-type(3) { 
-    background: #e7e2f8;
-    padding: 20px;
-    border-radius: 15px;
-    border-left: 5px solid #6610f2;
-    margin-bottom: 40px;
+.footer-services-list li a{
+    text-decoration: none;
+    font-weight: 500;
 }
 
-.container-coach section p span{
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #6610f2;
-    margin-bottom: 30px;
-    text-align: justify;
-
+.footer-services-list li a:hover{
+    color:#6610f2;
+    transform: translateY(-2px);
 }
-
-.tarjeta-coach {
-    background: #e7e2f8;
-    padding: 30px;
-    border-radius: 15px;
-    margin-bottom: 40px;
-}
-
-/* imagenes de la pagina de coach ontologico */
-
-.imagen-coach {
-    width: 100%;
-    height: auto;   
-    border-radius: 15px;
-    margin: 25px 0;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    display: block;
-}
-
-.imagen-coach-1 {
-    width: 100%;
-    height: auto;    
-    border-radius: 15px;
-    margin: 25px 0;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    display: block;
-}
-
-.imagen-coach-sub-1 {
-    width: 100%;
-    height: auto;    
-    border-radius: 15px;
-    margin: 25px 0;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    display: block;
-}
-
-.container-coach .imagen-coach-sub-1{
-    display: none;
-}
-
-.container-coach .imagen-coach:nth-of-type(3){
-    display: none;
-}
-
-.container-coach .imagen-coach:nth-of-type(4){
-    display: none;
-}
-
-.container-coach .imagen-coach:nth-of-type(5){
-    display: none;
-}
-
-.container-coach .imagen-coach:last-child{
-    display: none;
-}
-
-.tarjeta-coach p {
-    margin-top: 20px;
-    text-align: justify;
-    line-height: 1.8;
-}
-
-.footer-coach {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-}
-
-.footer-section-coach h3 {
-    font-size: 1.1rem;
-    color: rgb(10, 10, 173);
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.services-list-coach{
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
-
-/* Estilos exclusivos para la pagina de terapia con sonido */
-
-.container-terapia-sonora section:first-of-type{
-    background: #e7e2f8;
-    padding: 20px;
-    border-radius: 15px;
-    border-left: 5px solid #6610f2;
-    margin-bottom: 40px;
-}
-
-.container-terapia-sonora section:nth-of-type(3) { 
-    background: #e7e2f8;
-    padding: 20px;
-    border-radius: 15px;
-    border-left: 5px solid #6610f2;
-    margin-bottom: 40px;
-}
-
-.container-terapia-sonora section p span{
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #6610f2;
-    margin-bottom: 30px;
-    text-align: justify;
-
-}
-
-.tarjeta-terapia-sonora {
-    background: #e7e2f8;
-    padding: 30px;
-    border-radius: 15px;
-    margin-bottom: 40px;
-}
-
-/* imagenes de la pagina de terapia con sonido */
-
-.imagen-terapia-sonora {
-    width: 100%;
-    height: auto;    
-    border-radius: 15px;
-    margin: 25px 0;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    display: block;
-}
-.imagen-terapia-sonora-1 {
-    width: 100%;
-    height: auto;   
-    border-radius: 15px;
-    margin: 25px 0;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    display: block;
-}
-
-.container-terapia-sonora .imagen-terapia-sonora-sub-1{
-    display: none;
-}
-
-.container-terapia-sonora .imagen-terapia-sonora:nth-of-type(2){
-    display: none;
-}
-
-.container-terapia-sonora .imagen-terapia-sonora:nth-of-type(3){
-    display: none;
-}
-
-.container-terapia-sonora .imagen-terapia-sonora:nth-of-type(5){
-    display: none;
-}
-
-.container-terapia-sonora .imagen-terapia-sonora:last-child{
-    display: none;
-}
-
-.tarjeta-terapia-sonora p {
-    margin-top: 20px;
-    text-align: justify;
-    line-height: 1.8;
-}
-
-.footer-terapia-sonora {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-}
-
-.footer-section-terapia-sonora h3 {
-    font-size: 1.1rem;
-    color: rgb(10, 10, 173);
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.services-list-terapia-sonora{
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
-
-/* Estilos exclusivos para la pagina de meditacion */
-
-.container-meditacion section:first-of-type{
-    background: #e7e2f8;
-    padding: 20px;
-    border-radius: 15px;
-    border-left: 5px solid #6610f2;
-    margin-bottom: 40px;
-}
-
-.container-meditacion section:nth-of-type(3) { 
-    background: #e7e2f8;
-    padding: 20px;
-    border-radius: 15px;
-    border-left: 5px solid #6610f2;
-    margin-bottom: 40px;
-}
-
-.container-meditacion section p span{
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #6610f2;
-    margin-bottom: 30px;
-    text-align: justify;
-
-}
-
-.tarjeta-meditacion {
-    background: #e7e2f8;
-    padding: 30px;
-    border-radius: 15px;
-    margin-bottom: 40px;
-}
-
-/* imagenes de la pagina de meditacion */
-
-.imagen-meditacion {
-    width: 100%;
-    height: auto;   
-    border-radius: 15px;
-    margin: 25px 0;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    display: block;
-}
-
-.container-meditacion .imagen-meditacion-sub-1{
-    display: none;
-}
-
-.container-meditacion .imagen-meditacion:nth-of-type(2){
-    display: none;
-}
-
-.container-meditacion .imagen-meditacion:nth-of-type(3){
-    display: none;
-}
-
-.tarjeta-meditacion p {
-    margin-top: 20px;
-    text-align: justify;
-    line-height: 1.8;
-}
-
-.footer-meditacion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-}
-
-.footer-section-meditacion h3 {
-    font-size: 1.1rem;
-    color: rgb(10, 10, 173);
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.services-list-meditacion{
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
-
-/* RESPONSIVE PARA TABLETS (MIN - WIDTH 768px) */
-
-@media (min-width: 768px) {
-
-   /* invertir colores */
-
-    body {
-        background-color: #C29FFA;
-    }
-
-    nav{
-        background-color: #eec1e3;
-    }
-
-    main {
-        background-color: #eec1e3;
-    }
-    footer {
-        background-color: #eec1e3;
-    }
-
-    /* fin invertir colores */
-
-    /* header global */
-
-    header div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px 20px;
-        position: relative;
-    }
-
-    h1 {
-        order: 1;
-        margin: 0 auto;
-        text-align: center;
-        flex-grow: 1;
-    }
-
-    .logo-principal {
-        display: block !important;
-        order: 2;
-        width: 80px;
-        height: auto;
-        position: absolute;
-        right: 20px;
-    }
-
-    .navbar-brand {
-            display: none;
-    }
-    /* fin header global */
-
-    /* cambios de la pagina principal */
-
-    .container-principal {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 40px;
-        padding: 20px;
-    }
-
-    .container-principal section:first-child {
-        order: 2;
-        flex: 1.5;
-    }
-
-    .container-principal section:last-child {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        gap: 10px;
-        order: 1;
-        flex: 1;
-    }
-
-
-    .container-principal section img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        border-radius: 8px;
-    }
-
-    .container-principal section img:nth-of-type(8){
-        display: block;
-        object-position: top;
-    }
-
-    .footer-content {
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
-        align-items: center;
-        padding: 10px 10px;
-    }
-
-    .footer-info-centro {
-        grid-column: 2;
-        justify-self: center;
-        text-align: center;
-    }
-
-    .social-icons {
-        grid-column: 3;
-        align-self: end;
-        justify-self: start;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        transform: translateY(45px);
-    }
-
-    .instagram-link, .whatsapp-link-footer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        text-decoration: none;
-        color: inherit;
-    }
-
-
-    .whatsapp-link-footer {
-        margin-right: 1.5em;
-    }
-
-    .social-icons i {
-        font-size: 1.5rem;
-        width: 30px;
-        text-align: center;
-    }
-
-    .whatsapp-btn {
-        display: none;
-    }
-
-
-    /* cambios para la pagina de coach-ontologico */
-
-    .container-coach {
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr; 
-        gap: 30px;
-        align-items: start;
-        padding: 40px;
-    }
-
-    .container-coach section:nth-child(1) {
-        grid-column: 1 / span 3;
-        text-align: center;
-        margin-bottom: 0;
-    }
-
-    .container-coach section:nth-child(2) {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .container-coach section:nth-child(3) {
-        grid-column: 2 / span 2;
-        grid-row: 2 / span 3; 
-    }
-
-    .container-coach section:nth-child(4) {
-        grid-column: 1;
-        grid-row: 3; 
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .container-coach .imagen-coach-sub-1{
-        display: block;
-    }
-
-    .container-coach .imagen-coach:nth-of-type(3){
-        display: block;
-    }
-
-    .container-coach .imagen-coach:nth-of-type(4){
-        display: block;
-    }
-
-    .container-coach .imagen-coach:nth-of-type(5){
-        display: block;
-    }
-    
-    .container-coach .imagen-coach:nth-of-type(6){
-        display: block;
-    }
-
-    .container-coach img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 8px;
-        object-fit: cover;
-    }
-
-    .footer-coach {
-        grid-column: 1;
-        justify-self: start;
-    }
-
-/* cambios de la pagina meditacion */
-
-    .container-meditacion {
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr; 
-        gap: 30px;
-        align-items: start;
-        padding: 40px;
-    }
-
-    .container-meditacion section:nth-child(1) {
-        grid-column: 1 / span 3;
-        text-align: center;
-        margin-bottom: 0;
-    }
-
-    .container-meditacion section:nth-child(2) {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .container-meditacion section:nth-child(3) {
-        grid-column: 2 / span 2;
-        grid-row: 2 / span 3; 
-    }
-
-    .container-meditacion section:nth-child(4) {
-        grid-column: 1;
-        grid-row: 3; 
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .container-meditacion .imagen-meditacion-sub-1{
-        display: block;
-    }
-
-    .container-meditacion .imagen-meditacion:nth-of-type(2){
-        display: block;
-    }
-
-    .container-meditacion .imagen-meditacion:nth-of-type(3){
-        display: block;
-    }
-    
-    .container-meditacion img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 8px;
-        object-fit: cover;
-    }
-
-    footer {
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr; 
-        align-items: start;
-        padding: 20px 40px;
-    }
-
-    .footer-meditacion {
-        grid-column: 1;
-        justify-self: start;
-    }
-
-    .footer-content {
-        grid-column: 2;
-        justify-self: center;
-        text-align: center;
-        display: flex;
-        flex-direction: column; 
-        gap: 5px;
-        transform: translateY(50px); 
-    }
-
-    .social-icons {
-        grid-column: 3;
-        justify-items: end; 
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        transform: translateY(10px); 
-    }
-
-    .instagram-link, 
-    .whatsapp-link-footer {
-        display: flex;
-        flex-direction: column; 
-        align-items: center;
-        gap: 8px;
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .whatsapp-link-footer {
-        margin-right: 1.5em;
-    }
-
-    .social-icons i {
-        font-size: 1.5rem;
-        width: 30px;
-        text-align: center;
-    }
-
-/* cambio para la pagina de reiki */
-
-    .container-reiki {
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr; 
-        gap: 30px;
-        align-items: start;
-        padding: 40px;
-    }
-
-    .container-reiki section:nth-child(1) {
-        grid-column: 1 / span 3;
-        text-align: center;
-        margin-bottom: 0;
-    }
-
-    .container-reiki section:nth-child(2) {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .container-reiki section:nth-child(3) {
-        grid-column: 2 / span 2;
-        grid-row: 2 / span 3; 
-    }
-
-    .container-reiki section:nth-child(4) {
-        grid-column: 1;
-        grid-row: 3; 
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .container-reiki .imagen-reiki-sub-1{
-        display: block;
-    }
-
-    .container-reiki .imagen-reiki:nth-of-type(2){
-        display: block;
-    }
-
-    .container-reiki .imagen-reiki:nth-of-type(3){
-        display: block;
-    }
-    
-    .container-reiki .imagen-reiki:last-child{
-        display: block;
-    }
-
-    .container-reiki img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 8px;
-        object-fit: cover;
-    }
-
-    .footer-reiki {
-        grid-column: 1;
-        justify-self: start;
-    }
-
-    /* cambios para la pagina de terapias con sonido */
-
-    .container-terapia-sonora {
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr; 
-        gap: 30px;
-        align-items: start;
-        padding: 40px;
-    }
-
-    .container-terapia-sonora section:nth-child(1) {
-        grid-column: 1 / span 3;
-        text-align: center;
-        margin-bottom: 0;
-    }
-
-    .container-terapia-sonora section:nth-child(2) {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .container-terapia-sonora section:nth-child(3) {
-        grid-column: 2 / span 2;
-        grid-row: 2 / span 3; 
-    }
-
-    .container-terapia-sonora section:nth-child(4) {
-        grid-column: 1;
-        grid-row: 3; 
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .container-terapia-sonora .imagen-terapia-sonora-sub-1{
-        display: block;
-    }
-
-    .container-terapia-sonora .imagen-terapia-sonora:nth-of-type(2){
-        display: block;
-    }
-
-    .container-terapia-sonora .imagen-terapia-sonora:nth-of-type(3){
-        display: block;
-    }
-
-    .container-terapia-sonora .imagen-terapia-sonora:nth-of-type(4){
-        display: block;
-    }
-
-    .container-terapia-sonora .imagen-terapia-sonora:nth-of-type(5){
-        display: block;
-    }
-    
-    .container-terapia-sonora .imagen-terapia-sonora:nth-of-type(6){
-        display: block;
-    }
-
-    .container-terapia-sonora img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 8px;
-        object-fit: cover;
-    }
-
-    .footer-terapia-sonora {
-        grid-column: 1;
-        justify-self: start;
-    }
-
-
-}
-
