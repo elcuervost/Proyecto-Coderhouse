@@ -223,7 +223,7 @@ main, .section-list {
     transition: transform 0.3s ease;
 }
 
-/* imagenes ocultas para celular */
+/* imagenes ocultas para celular e icono de whatsapp redes*/
 
 .no-mobile{
     display: none;
@@ -275,12 +275,6 @@ footer {
 .social-icons a:hover {
     color: #6610f2;
     transform: scale(1.1);
-}
-
-/* icono de red whatsapp en celular oculto */
-
-.social-icons .whatsapp-link-footer{
-    display: none;
 }
 
 /* boton de whatsapp flotante */
@@ -407,4 +401,135 @@ iframe{
 .footer-services-list li a:hover{
     color:#6610f2;
     transform: translateY(-2px);
+}
+
+@media (min-width: 768px){
+
+    :root {
+    --color-fondo: #C29FFA;
+    --color-secundario: #eec1e3;
+    }
+
+    .no-mobile{
+        display: block;
+    }
+
+    .logo-principal{
+        display: block;
+        width: 150px;
+        height: auto;
+        margin-left: auto;
+        margin-top: -90px;
+        border-radius: 50%;
+        box-shadow: 4px -1px 1px var(--color-subrayado);
+    }
+
+    .navbar-brand{
+        display: none;
+    }
+
+    .container-services{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: start;
+        gap: 20px;
+    }
+
+    .titulo-servicio{
+        grid-area: 1 / 1 / 2 / 4;
+    }
+
+    .container-services .imagenes-principal{
+        grid-area: 2 / 1  ;
+        align-self: start;
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    .container-services .imagenes-principal img{
+        width: 100%;
+        height: 300px;
+        display: block;
+    }
+
+    .tarjeta{
+        grid-area: 2 / 2 / 2 / 4;
+    }
+
+    .section-list{
+        grid-area: 1 / 1 / 3 / 4;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr );
+        text-align: center;       
+    }
+
+    .social-icons{
+        grid-area: 1 / 3;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 8px;
+        margin-bottom: -65px;
+        
+    }
+
+    .footer-final{
+        grid-area: 2 / 2;
+        margin-bottom: -35px ;
+    }
+
+    
+    .whatsapp-btn {
+        display: none;
+    }
+
+}
+
+@media (min-width: 1200px){
+
+    :root {
+    --color-fondo: #eec1e3;
+    --color-secundario: #C29FFA;    
+    }
+
+    .imagenes-principal .no-desktop {
+        display: none !important;
+    }
+
+    .container-services{
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .titulo-servicio{
+        grid-area: 1 / 1 / 1 / span 4 ;
+    }
+
+    .container-services .imagenes-principal{
+        grid-area: 2 / 3 / 2 / span 2  ;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container-services .imagenes-principal img{
+        width: 100%;
+        height: 300px;
+        display: block;
+    }
+
+    .tarjeta{
+        grid-area: 2 / 1 / 2 / span 2;
+    }
+
+    .section-list{
+        grid-area: 1 / 1 / 1 / span 3;
+    }
+
+
 }
