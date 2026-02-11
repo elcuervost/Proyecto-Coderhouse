@@ -42,7 +42,7 @@ h1 {
     font-size: 3rem;
     font-weight: bolder;
     line-height: 1;
-}  
+}
 
 /* estilos del slogan */
 
@@ -72,7 +72,7 @@ div h1 span {
 /* estilos de color de los enlaces */
 
 .navbar .collapse .nav-link {
-    color:var(--color-enlaces);      
+    color:var(--color-enlaces);
 }
 
 /* estilos de los enlaces al posar el mouse */
@@ -88,7 +88,7 @@ div h1 span {
     border: 2px solid var(--color-enlaces);
     padding: 4px 8px;
     outline: none;
-    box-shadow: none !important;    
+    box-shadow: none !important;
 }
 
 /* estilos de las rayas del boton de navegacion */
@@ -107,7 +107,7 @@ div h1 span {
 main, .section-list {
     background-color: transparent;
     padding: 20px;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 /* estilo para los contenedores de servicio */
@@ -116,9 +116,9 @@ main, .section-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 900px; 
-    margin: 0 auto;   
-    padding: 10px;   
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px;
 }
 
 /* orden para visualisar en flex */
@@ -198,11 +198,11 @@ main, .section-list {
 
 .tarjeta {
     background: #e7e2f8;
-    padding: 25px; 
+    padding: 25px;
     border-radius: 15px;
     border-left: 5px solid #6610f2;
-    margin-bottom: 20px; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .container-services .imagenes-principal {
@@ -329,7 +329,7 @@ footer {
 .imagenes-reiki .imagen-inicio {
     order: 1;
     width: 100%;
-    height: auto;    
+    height: auto;
     border-radius: 15px;
     margin: 10px 0;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -349,7 +349,7 @@ footer {
 .imagenes-reiki .imagen-final{
     order: 3;
     width: 100%;
-    height: auto;    
+    height: auto;
     border-radius: 15px;
     margin: 10px 0;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -365,6 +365,21 @@ footer {
     margin-bottom: 15px;
     text-align: justify;
     display: block;
+}
+
+/* video enlace de youtube de las paginas, se aclara que el video es de autoría de nitya bhaktii */
+
+iframe{
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    height: auto;
+    margin: auto;
+    padding: 4px;
+    border-radius: 15px;
+    border: 6px solid var(--color-fondo);
+    outline: 2px solid var(--color-enlaces);
 }
 
 /* estilo de footer en servicios lista */
