@@ -33,6 +33,8 @@ header {
     gap: 15px;
 }
 
+/* estilos del Titulo PRINCIPAL */
+
 h1 {
     text-align: center;
     color:var(--color-enlaces);
@@ -41,6 +43,8 @@ h1 {
     font-weight: bolder;
     line-height: 1;
 }  
+
+/* estilos del slogan */
 
 div h1 span {
     display: block;
@@ -52,23 +56,33 @@ div h1 span {
     font-size: 0.3em;
 }
 
+/* logo grande oculto */
+
 .logo-principal{
     display: none;
 }
+
+/* estilos de color barra de navegacion */
 
 .navbar{
     background-color: var(--color-secundario);
     border-radius: 8px;
 }
 
+/* estilos de color de los enlaces */
+
 .navbar .collapse .nav-link {
     color:var(--color-enlaces);      
 }
+
+/* estilos de los enlaces al posar el mouse */
 
 .navbar .collapse .nav-link:hover {
     color:#6610f2;
     transform: translateY(-2px);
 }
+
+/* estilos del boton de la barra de navegacion */
 
 .navbar .navbar-toggler {
     border: 2px solid var(--color-enlaces);
@@ -77,11 +91,13 @@ div h1 span {
     box-shadow: none !important;    
 }
 
+/* estilos de las rayas del boton de navegacion */
+
 .navbar-toggler-icon{
     filter: sepia(100%) hue-rotate(190deg) saturate(500%);
 }
 
-/* estilos para el main esxlusivo del INDEX*/
+/* estilos para las paginas - color de fondo */
 
 .container-principal{
     background-color: var(--color-secundario);
@@ -94,6 +110,8 @@ main, .section-list {
     margin: 0 auto; 
 }
 
+/* estilo para los contenedores de servicio */
+
 .container-services {
     display: flex;
     flex-direction: column;
@@ -102,6 +120,8 @@ main, .section-list {
     margin: 0 auto;   
     padding: 10px;   
 }
+
+/* orden para visualisar en flex */
 
 .tarjeta{
     order: 1;
@@ -173,8 +193,8 @@ main, .section-list {
     margin-bottom: 30px;
     text-align: justify;
 }
-/* contenedores de la pagina principal */
 
+/* contenedores de la pagina principal */
 
 .tarjeta {
     background: #e7e2f8;
@@ -194,8 +214,7 @@ main, .section-list {
 
 /* imagenes de la pagina principal */
 
-.container-services .imagenes-principal img, 
-.imagenes-coach img {
+.container-services .imagenes-principal img {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -204,18 +223,23 @@ main, .section-list {
     transition: transform 0.3s ease;
 }
 
+/* imagenes ocultas para celular */
+
 .no-mobile{
     display: none;
 }
+
+/* correccion para centrar la imagen 3 */
 
 aside img:nth-of-type(3) {
     object-position: 90%;
 }
 
+/* efecto al posar el mouse en las imagenes */
+
 aside img:hover {
     transform: scale(1.03);
 }
-
 
 /* estilos GLOBAL del footer */
 
@@ -231,23 +255,29 @@ footer {
     gap: 30px;
 }
 
+/* centrar el slogan y copy final */
+
 .footer-final .footer-info-centro {
     font-size: 1rem;
     opacity: 0.7;
     margin-top: 10px;
 }
 
+/* estilo para iconos de redes sociales */
+
 .social-icons a {
     font-size: 1.8rem;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Efecto al tocar o pasar el mouse */
+/* Efecto al tocar o pasar el mouse por iconos de redes sociales */
 
 .social-icons a:hover {
     color: #6610f2;
     transform: scale(1.1);
 }
+
+/* icono de red whatsapp en celular oculto */
 
 .social-icons .whatsapp-link-footer{
     display: none;
@@ -275,6 +305,8 @@ footer {
     transition: transform 0.3s ease;
 }
 
+/* si se apreta el logo del whatsapp */
+
 .whatsapp-btn:active {
     transform: scale(1.1);
     background-color: #128c7e;
@@ -282,10 +314,14 @@ footer {
 
 /* estructura de estilos para paginas auxiliares */
 
+/* para poder tener control en el orden de visualizacion */
+
 .imagenes-coach, .imagenes-meditacion,
 .imagenes-sonoro, .imagenes-reiki{
     display: contents;
 }
+
+/* empezar viendo la imagen inicial */
 
 .imagenes-coach .imagen-inicio,
 .imagenes-meditacion .imagen-inicio,
@@ -299,10 +335,13 @@ footer {
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
+/* 2- texto principal de pagina auxiliar */
 
 .tarteta.texto-articulo{
     order: 2;
 }
+
+/* 3- imagen final */
 
 .imagenes-coach .imagen-final,
 .imagenes-meditacion .imagen-final,
@@ -316,6 +355,8 @@ footer {
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
+/* texto informativo de los articulos - titulos y negritas */
+
 .texto-articulo p span {
     font-size: 1.1rem;
     line-height: 1.7;
@@ -326,19 +367,27 @@ footer {
     display: block;
 }
 
+/* estilo de footer en servicios lista */
+
 .footer-services-list{
     list-style: none;
     padding: 0;
 }
 
+/* espacio para los enlaces del footer */
+
 .footer-services-list li{
     margin: 10px 0;
 }
+
+/* estilos de los enlaces del footer */
 
 .footer-services-list li a{
     text-decoration: none;
     font-weight: 500;
 }
+
+/* estilos al pasar el mouse por los enlaces */
 
 .footer-services-list li a:hover{
     color:#6610f2;
