@@ -410,8 +410,8 @@ iframe{
 @media (min-width: 768px){
 
     :root {
-    --color-fondo: #C29FFA;
-    --color-secundario: #eec1e3;
+        --color-fondo: #C29FFA;
+        --color-secundario: #eec1e3;
     }
 
     .logo-principal{
@@ -442,31 +442,52 @@ iframe{
         grid-area: 1 / 1 / 2 / 4;
     }
 
-    .imagenes-coach, .imagenes-meditacion,
-    .imagenes-sonoro, .imagenes-reiki{
-    display: flex;
-}
+    .tarjeta.tarjeta-inicio p{
+        font-size: 1.7rem;
+    }
+
+    .container-services p {
+        font-size: 1rem;
+    }
+
+    .imagenes-coach .imagen-inicio,
+    .imagenes-meditacion .imagen-inicio,
+    .imagenes-sonoro .imagen-inicio,
+    .imagenes-reiki .imagen-inicio {
+        order: unset;
+        margin: 0;
+    }
+
+    .imagenes-coach .imagen-final,
+    .imagenes-meditacion .imagen-final,
+    .imagenes-sonoro .imagen-final,
+    .imagenes-reiki .imagen-final{
+        order: unset;
+        margin: 0;
+    }
+
 
     .container-services .imagenes-principal,
     .container-services .imagenes-coach,
     .container-services .imagenes-meditacion,
-    .container-services .imagenes-sonoro,
-    .container-services .imagenes-reiki {
+    .container-services .imagenes-reiki,
+    .container-services .imagenes-sonoro {
         grid-area: 2 / 1  ;
         align-self: start;
-        display: flex !important;
+        display: flex;
         flex-direction: column;
         margin-top: 0;
         gap: 15px;
     }
 
+
     .container-services .imagenes-principal img,
     .container-services .imagenes-coach img,
     .container-services .imagenes-meditacion img,
-    .container-services .imagenes-sonoro img,
-    .container-services .imagenes-reiki img {
+    .container-services .imagenes-reiki img,
+    .container-services .imagenes-sonoro img {
         width: 100%;
-        height: 300px;
+        height: auto;
         object-fit: cover;
         border-radius: 12px;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -474,7 +495,7 @@ iframe{
     }
 
     .no-mobile{
-        display: block !important;
+        display: unset ;
         width: 100%;
     }
 
@@ -484,6 +505,10 @@ iframe{
 
     .section-list{
         grid-area: 1 / 1 / 3 / 4;
+    }
+
+     iframe{
+    width: 600px;
     }
 
     footer {
@@ -499,14 +524,12 @@ iframe{
         gap: 20px;
         padding-top: 8px;
         margin-bottom: -65px;
-        
     }
 
     .footer-final{
         grid-area: 2 / 2;
         margin-bottom: -35px ;
     }
-
     
     .whatsapp-btn {
         display: none;
@@ -535,6 +558,7 @@ iframe{
         margin: auto;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        align-items: start;
     }
 
     .titulo-servicio{
@@ -542,20 +566,24 @@ iframe{
     }
 
     .container-services .imagenes-principal,
-    .container-services .imagenes-coach{
-        grid-area: 2 / 3 / 2 / span 2  ;
-        display: grid;
+    .container-services .imagenes-coach,
+    .container-services .imagenes-meditacion,
+    .container-services .imagenes-reiki,
+    .container-services .imagenes-sonoro{
+        display: grid !important;
         grid-template-columns: repeat(2, 1fr);
+        grid-area: 2 / 3 / 5 / span 2  ;
         gap: 15px;
+        align-self: start;
     }
 
     .container-services .imagenes-principal img,
-    .container-services .imagenes-coach img, 
+    .container-services .imagenes-coach img,
     .container-services .imagenes-meditacion img,
-    .container-services .imagenes-sonoro img,
-    .container-services .imagenes-reiki img {
+    .container-services .imagenes-reiki img,
+    .container-services .imagenes-sonoro img {
         width: 100%;
-        height: 300px;
+        height: 400px;
         display: block;
     }
 
@@ -567,5 +595,8 @@ iframe{
         grid-area: 1 / 1 / 1 / span 3;
     }
 
+    iframe{
+    width: 800px;    
+    }
+}    
 
-}
