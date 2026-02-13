@@ -1,0 +1,685 @@
+/* variables de colores de la pagina */
+
+:root {
+    --color-fondo: #eec1e3;
+    --color-secundario: #C29FFA;
+    --color-enlaces: rgb(10, 10, 173);
+    --color-subrayado: rgb(100, 100, 204);
+    --color-texto: #444;
+    --fuente-principal: sans-serif;
+}
+
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* estilos del GLOBAL del body */
+
+body {
+    font-family: var(--fuente-principal);
+    line-height: 1.6;
+    background-color: var(--color-fondo);
+    }
+
+/* estilos GLOBAL del header */
+
+header {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* estilos del Titulo PRINCIPAL */
+
+h1 {
+    text-align: center;
+    color:var(--color-enlaces);
+    font-family: 'mea culpa', cursive;
+    font-size: 3rem;
+    font-weight: bolder;
+    line-height: 1;
+}
+
+/* estilos del slogan */
+
+div h1 span {
+    display: block;
+    color: var(--color-subrayado);
+    font-size: 0.5em;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-size: 0.3em;
+}
+
+/* logo grande oculto */
+
+.logo-principal{
+    display: none;
+}
+
+/* estilos de color barra de navegacion */
+
+.navbar{
+    background-color: var(--color-secundario);
+    border-radius: 8px;
+}
+
+/* estilos de color de los enlaces */
+
+.navbar .collapse .nav-link {
+    color:var(--color-enlaces);
+}
+
+/* estilos de los enlaces al posar el mouse */
+
+.navbar .collapse .nav-link:hover {
+    color:#6610f2;
+    transform: translateY(-2px);
+}
+
+/* estilos del boton de la barra de navegacion */
+
+.navbar .navbar-toggler {
+    border: 2px solid var(--color-enlaces);
+    padding: 4px 8px;
+    outline: none;
+    box-shadow: none !important;
+}
+
+/* estilos de las rayas del boton de navegacion */
+
+.navbar-toggler-icon{
+    filter: sepia(100%) hue-rotate(190deg) saturate(500%);
+}
+
+/* estilos para las paginas - color de fondo */
+
+.container-principal{
+    background-color: var(--color-secundario);
+    width: 100%;
+}
+
+main, .section-list {
+    background-color: transparent;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* estilo para los contenedores de servicio */
+
+.container-services {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* orden para visualisar en flex */
+
+.tarjeta{
+    order: 1;
+}
+
+.imagenes-principal{
+    order: 2;
+}
+
+/* estilos para subtitulos */
+
+.container-services h2, .container-services h3 {
+    color: var(--color-enlaces);
+    margin-bottom: 20px;
+    font-family: var(--fuente-principal);
+    position: relative;
+    font-weight: bold;
+    display: block;
+}
+
+/* estilo para cortar parrafo */
+
+.container-services summary {
+    list-style: none;
+    color: #6f42c1;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 10px;
+    outline: none;
+}
+
+/* boton de ver mas */
+
+.container-services summary::after {
+    content: '+';
+}
+
+/* una vez abierto ver menos */
+
+.container-services [open] summary::after {
+    content: '-';
+}
+
+/*  espacio una vez abierto el resto del parrafo */
+
+.container-services [open] summary {
+    margin-bottom: 25px;
+}
+
+/* estilo de subrayado personal a los subtitulos */
+
+.container-services h2::after, .container-services h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--color-subrayado);
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+/* estilo de parrafos */
+
+.container-services p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-texto);
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+/* contenedores de la pagina principal */
+
+.tarjeta {
+    background: #e7e2f8;
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 5px solid #6610f2;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.container-services .imagenes-principal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+/* imagenes de la pagina principal */
+
+.container-services .imagenes-principal img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+/* imagenes ocultas para celular e icono de whatsapp redes*/
+
+.no-mobile{
+    display: none;
+}
+
+.whatsapp{
+    display:none;
+}
+
+/* correccion para centrar la imagen 3 */
+
+aside img:nth-of-type(3) {
+    object-position: 90%;
+}
+
+/* efecto al posar el mouse en las imagenes */
+
+aside img:hover {
+    transform: scale(1.03);
+}
+
+/* estilos GLOBAL del footer */
+
+footer {
+    background-color: var(--color-secundario);
+    color: var(--color-enlaces);
+    padding: 20px 20px;
+    text-align: center;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* centrar el slogan y copy final */
+
+.footer-final .footer-info-centro {
+    font-size: 1rem;
+    opacity: 0.7;
+    margin-top: 10px;
+}
+
+/* estilo para iconos de redes sociales */
+
+.social-icons a {
+    font-size: 1.8rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Efecto al tocar o pasar el mouse por iconos de redes sociales */
+
+.social-icons a:hover {
+    color: #6610f2;
+    transform: scale(1.1);
+}
+
+/* boton de whatsapp flotante */
+
+.whatsapp-btn {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 25px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+/* si se apreta el logo del whatsapp */
+
+.whatsapp-btn:active {
+    transform: scale(1.1);
+    background-color: #128c7e;
+}
+
+/* estructura de estilos para paginas auxiliares */
+
+/* para poder tener control en el orden de visualizacion */
+
+.imagenes-coach, .imagenes-meditacion,
+.imagenes-sonoro, .imagenes-reiki{
+    display: contents;
+}
+
+/* empezar viendo la imagen inicial */
+
+.imagenes-coach .imagen-inicio,
+.imagenes-meditacion .imagen-inicio,
+.imagenes-sonoro .imagen-inicio,
+.imagenes-reiki .imagen-inicio {
+    order: 1;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin: 10px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* 2- texto principal de pagina auxiliar */
+
+.tarteta.texto-articulo{
+    order: 2;
+}
+
+/* 3- imagen final */
+
+.imagenes-coach .imagen-final,
+.imagenes-meditacion .imagen-final,
+.imagenes-sonoro .imagen-final,
+.imagenes-reiki .imagen-final{
+    order: 3;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin: 10px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* texto informativo de los articulos - titulos y negritas */
+
+.texto-articulo p span {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #6610f2;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: justify;
+    display: block;
+}
+
+/* video enlace de youtube de las paginas, se aclara que el video es de autoría de nitya bhaktii */
+
+iframe{
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    height: auto;
+    margin: auto;
+    padding: 4px;
+    border-radius: 15px;
+    border: 6px solid var(--color-fondo);
+    outline: 2px solid var(--color-enlaces);
+}
+
+/* estilo de footer en servicios lista */
+
+.footer-services-list{
+    list-style: none;
+    padding: 0;
+}
+
+/* espacio para los enlaces del footer */
+
+.footer-services-list li{
+    margin: 10px 0;
+}
+
+/* estilos de los enlaces del footer */
+
+.footer-services-list li a{
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* estilos al pasar el mouse por los enlaces */
+
+.footer-services-list li a:hover{
+    color:#6610f2;
+    transform: translateY(-2px);
+}
+
+@media (min-width: 768px){
+
+    :root {
+        --color-fondo: #C29FFA;
+        --color-secundario: #eec1e3;
+    }
+
+    .logo-principal{
+        display: block;
+        width: 150px;
+        height: auto;
+        margin-left: auto;
+        margin-top: -90px;
+        border-radius: 50%;
+        box-shadow: 4px -1px 1px var(--color-subrayado);
+    }
+
+    .navbar-brand{
+        display: none;
+    }
+
+    .no-desktop{
+        display: none !important;
+    }
+
+    .container-services{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: start;
+    }
+
+    .titulo-servicio{
+        grid-area: 1 / 1 / 2 / 4;
+    }
+
+    .tarjeta.tarjeta-inicio p{
+        font-size: 1.7rem;
+    }
+
+    .container-services p {
+        font-size: 1rem;
+    }
+
+    .imagenes-coach .imagen-inicio,
+    .imagenes-meditacion .imagen-inicio,
+    .imagenes-sonoro .imagen-inicio,
+    .imagenes-reiki .imagen-inicio {
+        order: unset;
+        margin: 0;
+    }
+
+    .imagenes-coach .imagen-final,
+    .imagenes-meditacion .imagen-final,
+    .imagenes-sonoro .imagen-final,
+    .imagenes-reiki .imagen-final{
+        order: unset;
+        margin: 0;
+    }
+
+
+    .container-services .imagenes-principal,
+    .container-services .imagenes-coach,
+    .container-services .imagenes-meditacion,
+    .container-services .imagenes-reiki,
+    .container-services .imagenes-sonoro {
+        grid-area: 2 / 1  ;
+        align-self: start;
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        gap: 15px;
+    }
+
+
+    .container-services .imagenes-principal img,
+    .container-services .imagenes-coach img,
+    .container-services .imagenes-meditacion img,
+    .container-services .imagenes-reiki img,
+    .container-services .imagenes-sonoro img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .no-mobile{
+        display: unset ;
+        width: 100%;
+    }
+
+    .tarjeta{
+        grid-area: 2 / 2 / 2 / 4;
+    }
+
+    .section-list{
+        grid-area: 1 / 1 / 3 / 4;
+    }
+
+    iframe{
+    width: 600px;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr );
+        text-align: center;       
+    }
+
+    .social-icons{
+        grid-area: 1 / 3;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 8px;
+        margin-bottom: -65px;
+    }
+
+    .footer-final{
+        grid-area: 2 / 2;
+        margin-bottom: -35px ;
+    }
+    
+    .whatsapp-btn {
+        display: none;
+    }
+
+    .whatsapp, .instagram-link{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media (min-width: 1200px){
+
+    :root {
+    --color-fondo: #eec1e3;
+    --color-secundario: #C29FFA;    
+    }
+
+    .imagenes-principal .no-desktop {
+        display: none !important;
+    }
+
+    .container-services{
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: start;
+    }
+
+    .titulo-servicio{
+        grid-area: 1 / 2 / 1 / 4 ;
+    }
+
+    .container-services .imagenes-principal,
+    .container-services .imagenes-coach,
+    .container-services .imagenes-meditacion,
+    .container-services .imagenes-reiki,
+    .container-services .imagenes-sonoro{
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        grid-area: 2 / 3 / 5 / span 2  ;
+        gap: 15px;
+        align-self: start;
+    }
+
+    .container-services .imagenes-principal img,
+    .container-services .imagenes-coach img,
+    .container-services .imagenes-meditacion img,
+    .container-services .imagenes-reiki img,
+    .container-services .imagenes-sonoro img {
+        width: 100%;
+        height: 400px;
+        display: block;
+    }
+
+    .tarjeta{
+        grid-area: 2 / 1 / 2 / span 2;
+    }
+
+    .section-list{
+        grid-area: 1 / 1 / 1 / span 3;
+    }
+
+    iframe{
+    width: 800px;    
+    }
+}    
+
+/* Se informa que estuve viendo la unidad de SASS que sigue en el curso, y se me dio por probar y trabajar en mi proyecto, el tema es que al guardar en Git para poder seguir con el mismo en mi lugar laboral, no me di cuenta que se subia para la entrega, espero sepan entender que desde el 12/02/2026 hacia atras escribi el codigo de Style en CSS*/
+
+
+/* PRODUCTTOS ARTESANALES */
+
+    .container-personal{
+        display: grid;
+        gap: 20px;
+        padding: 20px;
+        grid-template-areas: 
+        "header"
+        "titulo"
+        "hero" ;
+    }
+
+    .hero-personal{
+        grid-area: titulo;
+        text-align: start;
+            .tarjeta{
+                font-size: 1.4em !important;
+            }
+            
+    }
+
+    .producto-personal {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 25px;
+        margin-top: 20px;
+
+            a {
+                text-decoration: none;
+                color: inherit;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transition: transform 0.3s ease;
+
+                    &:hover {
+                        transform: translateY(-5px); // Pequeño salto hacia arriba al pasar el mouse
+
+                            img {
+                                box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+                            }
+                        }
+
+            img {
+                width: 100%;
+                height: 300px; // Altura fija para que todos los productos se alineen
+                object-fit: cover; // Corta la imagen para que rellene el espacio sin estirarse
+                border-radius: 15px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+
+            span {
+                font-size: 1.1rem;
+                line-height: 1.2;
+                color: #6610f2;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                text-align: center;
+                display: block;
+
+                span {
+                    font-size: 1.0rem;
+                    line-height: 1;
+                    color: #6610f2;
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                    text-align: center;
+                    display: block;
+                }
+            }
+        }
+    }
+
+
+
+
+    
+    
+
+    
