@@ -365,11 +365,18 @@ iframe {
   transform: translateY(-2px);
 }
 
+/* media querie para tablets */
+
+/* cambio de colores */
+
 @media (min-width: 768px) {
   :root {
     --color-fondo: #C29FFA;
     --color-secundario: #eec1e3;
   }
+
+/* poner el logo al lado del titulo */
+
   .logo-principal {
     display: block;
     width: 150px;
@@ -379,12 +386,21 @@ iframe {
     border-radius: 50%;
     box-shadow: 4px -1px 1px var(--color-subrayado);
   }
+
+  /* ocultar el logo de la barra */
+
   .navbar-brand {
     display: none;
   }
+
+/* mostrar las fotos en tablet */
+
   .no-desktop {
     display: none !important;
   }
+
+/* usar grid para loyaut */
+
   .container-services {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -467,6 +483,9 @@ iframe {
     grid-area: 2/2;
     margin-bottom: -35px;
   }
+
+/* ocultar el boton de wahats */
+
   .whatsapp-btn {
     display: none;
   }
@@ -475,6 +494,10 @@ iframe {
     flex-direction: column;
   }
 }
+
+/* media querie para desktop */
+/* invertir colores */
+
 @media (min-width: 1200px) {
   :root {
     --color-fondo: #eec1e3;
@@ -493,6 +516,9 @@ iframe {
   .titulo-servicio {
     grid-area: 1/2/1/4;
   }
+
+/* cambia la imagenes de izquierda a derecha */
+
   .container-services .imagenes-principal,
   .container-services .imagenes-coach,
   .container-services .imagenes-meditacion,
@@ -595,8 +621,8 @@ iframe {
   .container-personal {
     grid-template-columns: 200px 1fr 1fr;
     grid-template-areas:
-     "header header header" 
-     " nav  titulo titulo " 
+     "header header header"
+     " nav  titulo titulo "
      " nav   hero  hero ";
     }
 
@@ -618,7 +644,7 @@ iframe {
     .nav-personal ul li a {
       text-decoration: none;
       color: var(--color-enlaces);
-      transition: color 0.3s ease;      
+      transition: color 0.3s ease;
     }
 
     .nav-personal ul li a:hover{
@@ -667,8 +693,8 @@ iframe {
   .container-personal {
     grid-template-columns: 200px repeat(4, 1fr);
     grid-template-areas:
-     "header header header header header" 
-     " nav  titulo titulo titulo titulo" 
+     "header header header header header"
+     " nav  titulo titulo titulo titulo"
      " nav   hero   hero   hero    hero";
     }
 
@@ -677,7 +703,7 @@ iframe {
     }
 
     .nav-personal{
-      grid-area: nav;      
+      grid-area: nav;
     }
 
     .titulo-servicio .hero-personal{
@@ -694,21 +720,21 @@ iframe {
 }
 
 .navbar .collapse .btn-personal {
-    background-color: var(--color-fondo); 
+    background-color: var(--color-fondo);
     color: var(--color-enlaces);
     padding: 10px 25px ;
-    border-radius: 50px; 
+    border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
     display: inline-block;
     border: 2px solid var(--color-subrayado);
     transition: all 0.3s ease;
-    line-height: 1; 
+    line-height: 1;
 }
 
 .navbar .collapse .btn-personal:hover{
     background-color: var(--color-subrayado);
     color: var(--color-fondo);
-    transform: translateY(-1px); 
+    transform: translateY(-1px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
